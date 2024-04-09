@@ -2,6 +2,16 @@
 <html>
 <head>
     <title>Chat App</title>
+    <style>
+        /* 폰트 크기 변경 */
+        body {
+            font-size: 25px;                    
+        }
+        /*밑줄 기능*/
+        .important {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
     <div id="chat"></div>
@@ -19,17 +29,23 @@
                 const reader = new FileReader();
                 reader.onload = function() {
                     const message = document.createElement('p');
-                    message.textContent = reader.result;
+                    message.innerHTML = formatMessage(reader.result);
                     chat.appendChild(message);
                 };
                 reader.readAsText(event.data);
             } else {
                 // 메시지가 문자열인 경우, 직접 표시
                 const message = document.createElement('p');
-                message.textContent = event.data;
+                message.innerHTML = formatMessage(event.data);
                 chat.appendChild(message);
             }
         };
+
+        function formatMessage(message) {
+            // 작은따옴표로 감싸인 텍스트에 밑줄 추가
+            message = message.replace(/'(.*?)'/g, "<span class='important'>$1</span>");
+            return message;
+        }
 
         function sendMessage() {
             const message = messageInput.value;
