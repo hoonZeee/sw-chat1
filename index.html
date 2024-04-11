@@ -19,7 +19,6 @@
             color: gray;
         }
 
- main
     </style>
 </head>
 <body>
@@ -45,7 +44,7 @@
             } else {
                 // 메시지가 문자열인 경우, 직접 표시
                 const message = document.createElement('p');
-                message.innerHTML = formatMessage(event.data);
+                message.innerHTML = formatMessage(event.data) + ' <span class="timestamp">' + formatTimestamp(new Date()) + '</span>';
                 chat.appendChild(message);
             }
         };
@@ -68,8 +67,6 @@
             return `${year}년 ${month}월 ${day}일 ${hours}시 ${minutes}분 ${seconds}초`;
         }
 
-
- main
         function sendMessage() {
             const message = messageInput.value;
             ws.send(message);
@@ -78,3 +75,4 @@
     </script>
 </body>
 </html>
+
