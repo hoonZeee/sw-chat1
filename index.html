@@ -11,12 +11,15 @@
         .important {
             text-decoration: underline;
         }
+
         /*채팅시간 기능*/
         .timestamp {
             margin-left: 10px;
             font-size: 12px;
             color: gray;
         }
+
+ main
     </style>
 </head>
 <body>
@@ -52,6 +55,7 @@
             message = message.replace(/'(.*?)'/g, "<span class='important'>$1</span>");
             return message;
         }
+
         // 채팅시간 구현
         function formatTimestamp(date) {
             const year = date.getFullYear();
@@ -63,6 +67,9 @@
 
             return `${year}년 ${month}월 ${day}일 ${hours}시 ${minutes}분 ${seconds}초`;
         }
+
+
+ main
         function sendMessage() {
             const message = messageInput.value;
             ws.send(message);
