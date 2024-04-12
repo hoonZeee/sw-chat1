@@ -1,27 +1,45 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Chat App</title>
-    
-    <script src="js/chat.js"></script>
-
+    <link rel="stylesheet" href="css/fonts.css" />
     <style>
-        body {
-            font-size: 25px;                    
-        }
-        .important {
-            text-decoration: underline;
-        }
-        .timestamp {
-            margin-left: 10px;
-            font-size: 12px;
-            color: gray;
-        }
+      body {
+        font-size: 25px;
+      }
+      .important {
+        text-decoration: underline;
+      }
+      .timestamp {
+        margin-left: 10px;
+        font-size: 12px;
+        color: gray;
+      }
     </style>
-</head>
-<body>
+    <script src="js/chat.js"></script>
+  </head>
+  <body>
+    <select id="fontSelector">
+      <option value="font-arial">Arial</option>
+      <option value="font-times">Times New Roman</option>
+      <option value="font-mono">Courier New</option>
+      <option value="jua-regular">Jua Regular</option>
+      <option value="nanum-gothic-regular">Nanum Gothic Regular</option>
+      <option value="roboto-thin">Roboto Thin</option>
+      <option value="roboto-light">Roboto Light</option>
+      <option value="roboto-regular">Roboto Regular</option>
+      <option value="roboto-medium">Roboto Medium</option>
+      <option value="roboto-bold">Roboto Bold</option>
+      <option value="roboto-black">Roboto Black</option>
+      <option value="roboto-thin-italic">Roboto Thin Italic</option>
+      <option value="roboto-light-italic">Roboto Light Italic</option>
+      <option value="roboto-regular-italic">Roboto Regular Italic</option>
+      <option value="roboto-medium-italic">Roboto Medium Italic</option>
+      <option value="roboto-bold-italic">Roboto Bold Italic</option>
+      <option value="roboto-black-italic">Roboto Black Italic</option>
+    </select>
     <div id="chat"></div>
-    <input type="text" id="messageInput" placeholder="Type a message...">
+    <input type="text" id="messageInput" placeholder="Type a message..." />
     <button id="sendButton">Send</button>
-</body>
+  </body>
 </html>
