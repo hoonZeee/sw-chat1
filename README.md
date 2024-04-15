@@ -1,1 +1,1 @@
-# sw-chat
+npm install ws
