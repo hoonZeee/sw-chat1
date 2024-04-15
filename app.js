@@ -17,6 +17,16 @@ var app = http.createServer((req, res) => {
       res.writeHead(200, { "Content-type": "text/html" });
       res.end(data);
     });
+  } else if (path === "/login") {
+    fs.readFile(`./login.html`, (err, data) => {
+      if (err) {
+        res.writeHead(500);
+        res.end("Server Error");
+        return;
+      }
+      res.writeHead(200, { "Content-type": "text/html" });
+      res.end(data);
+    });
   } else {
     fs.readFile(`.${path}`, (err, data) => {
       if (err) {
